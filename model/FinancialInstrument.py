@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-import Limit
+from model import Limit
 
 
 class FinancialInstrument:

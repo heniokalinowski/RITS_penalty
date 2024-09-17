@@ -2,7 +2,7 @@ from typing import List
 
 import pandas as pd
 
-from FinancialInstrument import FinancialInstrument
+from model.FinancialInstrument import FinancialInstrument
 
 
 def financial_instruments_to_dataframe(instruments: List[FinancialInstrument]) -> pd.DataFrame:
