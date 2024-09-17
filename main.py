@@ -8,9 +8,8 @@ from unmarshaller import unmarshall_to_financial_instruments
 
 async def main():
     async with aiohttp.ClientSession(headers={'Authorization': 'Basic YTph'}) as session:
-        async with session.get(f"http://google.com") as resp:
-        # async with session.get(f"http://10.1.7.22:{10009}/v1/securities") as resp:
-            text_ = await resp.text()
+        async with session.get(f"http://10.1.7.22:{10009}/v1/securities") as response:
+            text_ = await response.text()
             print(text_)
             # objects = parse_json_to_objects(text_)
             # print(objects)
