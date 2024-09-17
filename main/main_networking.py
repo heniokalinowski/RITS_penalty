@@ -1,11 +1,9 @@
 import asyncio
-import os
-from concurrent.futures import ThreadPoolExecutor
 
 import aiohttp
 
 from penalty import calculate_penalty_for_json
-from unmarshaller import unmarshall_to_financial_instruments
+
 
 async def main_networking():
     async with aiohttp.ClientSession(headers={'Authorization': 'Basic YTph'}) as session:
