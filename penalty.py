@@ -19,7 +19,7 @@ def calculate_penalty_for_json(json: str) -> float:
     financial_instruments: List[FinancialInstrument] = unmarshaller.unmarshall_to_financial_instruments(json)
     dataframe: pd.DataFrame = financial_instruments_to_dataframe(financial_instruments)
 
-    dataframe['position'] = np.random.randint(-10_000, 10_000, size=len(dataframe))
+    dataframe['position'] = np.random.randint(-1_000, 1_000, size=len(dataframe))
 
     # compacted_dataframe: pd.DataFrame = compact(dataframe)
     deltas: pd.DataFrame = calculate_deltas(dataframe)
