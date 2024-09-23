@@ -39,5 +39,8 @@ def calculate_deltas(df: pd.DataFrame) -> pd.DataFrame:
     options['strike'], options['option_type'], options['months_to_expiry'] = zip(*options['ticker'].apply(parse_ticker))
     options['implied_volatility'] = options.apply(lambda it: calculate_implied_volatility(underlying_price, it), axis='columns')
     options['delta'] = options.apply(lambda it: calculate_delta(underlying_price, it), axis='columns')
+    stock['delta'] = 1
 
-    return options
+    result = pd.concat([stock.to_frame().T, options], ignore_index=True)
+
+    return result
